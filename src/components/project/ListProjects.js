@@ -1,13 +1,14 @@
 import React from "react";
 import SummeryProjects from "./SummeryProjects";
 
-const ListProjects = () => {
+const ListProjects = ({projects}) => {
     return(
       <div className="project-list section">
-          <SummeryProjects/>
-          <SummeryProjects/>
-          <SummeryProjects/>
-          <SummeryProjects/>
+          { projects && projects.map((project)=>{
+              return(
+                  <SummeryProjects project={project} key={project.id}/>
+              );
+          }) }
       </div>
     );
 }
